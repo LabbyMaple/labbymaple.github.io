@@ -1,6 +1,7 @@
+let templist = [1,2,3,4,5,6,67,88,9,0,5,7,9,2,3,4,5,6,7,8,9,0,1,2]
 let ctx = document.getElementById("myChart").getContext("2d");
     let myChart = new Chart(ctx, {
-        type: "bar",
+        type: "line",
         data: {
             labels: [
                 "12am",
@@ -31,7 +32,7 @@ let ctx = document.getElementById("myChart").getContext("2d");
             datasets: [
                 {
                     label: "Temperature",
-                    data: [2, 9, 3, 17, 6, 3, 7, 1, 9, 5, 12, 5, 6, 5, 4, 3, 2, 1, 0, 5, 10, 15, 20, 0],
+                    data: templist,
                     backgroundColor: "rgba(153,205,1,0.6)",
                 },
             ],
