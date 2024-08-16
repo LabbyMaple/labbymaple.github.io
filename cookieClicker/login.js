@@ -18,6 +18,9 @@ const firebaseConfig = {
   measurementId: "G-9L70HGFYYN"
 };
 
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth()
 var login_button = document.getElementById("login_button")
 login_button.addEventListener("click", async () => {
   var email = document.getElementById("email")

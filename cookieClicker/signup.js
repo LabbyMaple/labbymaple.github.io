@@ -19,7 +19,6 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const auth = getAuth()
 var button = document.getElementById("signup_button")
 button.addEventListener("click", async () => {
