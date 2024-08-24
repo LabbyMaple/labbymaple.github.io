@@ -27,6 +27,7 @@ login_button.addEventListener("click", async () => {
   var password = document.getElementById("password")
   signInWithEmailAndPassword(auth, email.value, password.value).then((userCredidential) => {
     const user = userCredidential.user
+    sessionStorage.setItem("email", user.email)
     window.location.href = "../cookieClicker"
   })
   .catch((error) => {
