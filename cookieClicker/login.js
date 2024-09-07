@@ -1,6 +1,6 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-analytics.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-auth.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 // Import the functions you need from the SDKs you need
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -25,10 +25,11 @@ var login_button = document.getElementById("login_button")
 login_button.addEventListener("click", async () => {
   var email = document.getElementById("email")
   var password = document.getElementById("password")
-  signInWithEmailAndPassword(auth, email.value, password.value).then((userCredidential) => {
+  signInWithEmailAndPassword(auth, email.value, password.value).then(function (userCredidential){
     const user = userCredidential.user
     sessionStorage.setItem("email", user.email)
-    window.location.href = "../cookieClicker"
+    // console.log(user)
+    window.location.href = "/cookieClicker"
   })
   .catch((error) => {
     const errorCode = error.code
