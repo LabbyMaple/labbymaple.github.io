@@ -89,13 +89,24 @@ scoreboard.innerHTML += `<li>Item 100</li>`
 async function getScoreboard(){
   scoreboard.innerHTML = ""
   const querySnapshot = await getDocs(collection(db, "scores"));
-  querySnapshot.forEach((doc) => {
-  // doc.data() is never undefined for query doc snapshots
-  console.log(doc.id, " => ", doc.data()["score"]);
-  scoreboard.innerHTML += `<li style=""> <div id="first_name">${doc.id.split('@')[0]}</div><div id="first_score">${doc.data()["score"]}</div></li>`
+  var sortedScores = []
+  querySnapshot.forEach((item) => {
+  sortedScores.push({name: item.id, score: item.data()["score"]})
+  // console.log(doc.id, " => ", doc.data()["score"]);
 });
-  const snapshot = await collection(db, "scores")
-  console.log(snapshot)
+  
+
+
+sortedScores.sort((a,b) => b.score - a.score)
+
+console.log(sortedScores)
+
+
+for (let index = 0; index < sortedScores.length; index++) {
+  scoreboard.innerHTML += `<li style=""> <div id="first_name">${sortedScores[index].name.split('@')[0]}</div><div id="first_score">${sortedScores[index].score}</div></li>`
+  
+}
+
 }
 
 await getScoreboard()
