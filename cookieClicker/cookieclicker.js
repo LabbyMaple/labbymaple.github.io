@@ -102,7 +102,7 @@ sortedScores.sort((a,b) => b.score - a.score)
 console.log(sortedScores)
 
 
-for (let index = 0; index < sortedScores.length; index++) {
+for (let index = 0; index < 5; index++) {
   scoreboard.innerHTML += `<li style=""> <div id="first_name">${sortedScores[index].name.split('@')[0]}</div><div id="first_score">${sortedScores[index].score}</div></li>`
   
 }

@@ -1,0 +1,21 @@
+body {
+    font-family: "DynaPuff";
+}
+button {
+    color: white;
+    border-color: white;
+}
+div > input {
+    color: white;
+    background-color: lightskyblue;
+    border-color: white;
+    font-family: "DynaPuff";
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-text-fill-color: white !important;
+    background-color: cornflowerblue;
+    transition: background-color 5000s ease-in-out 0s;
+}
