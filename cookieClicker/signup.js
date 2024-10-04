@@ -26,7 +26,7 @@ button.addEventListener("click", async () => {
   createUserWithEmailAndPassword(auth, email.value, password.value).then((userCredidential) => {
     const user = userCredidential.user
     sessionStorage.setItem("email", user.email)
-    window.location.href = "cookieClicker.html"
+    window.location.href = "/cookieClicker/cookieclicker.html"
   })
   .catch((error) => {
     const errorCode = error.code
