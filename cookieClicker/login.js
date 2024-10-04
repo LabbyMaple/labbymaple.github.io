@@ -28,7 +28,7 @@ login_button.addEventListener("click", async () => {
     const user = userCredidential.user
     sessionStorage.setItem("email", user.email)
     // console.log(user)
-    window.location.href = "/cookieClicker/cookieClicker.html"
+    window.location.href = "/cookieClicker/cookieclicker.html"
   })
   .catch((error) => {
     const errorCode = error.code
